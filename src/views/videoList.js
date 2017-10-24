@@ -5,7 +5,7 @@ var VideoListView = Backbone.View.extend({
   sample: [$('<div>').html('hello'), $('<div>').html('hello'), $('<div>').html('hello'), $('<div>').html('hello'), $('<div>').html('hello')],
 
   initialize: function() {
-    console.log('in vlv initialize');
+    this.collection.on('sync', this.render, this);
   },
 
   render: function() {
