@@ -1,7 +1,23 @@
 var SearchView = Backbone.View.extend({
 
+  events: {
+    'click button': 'search',
+    'keyup': 'keySearch'
+  },
+  
+  keySearch: function(e) {
+    if (e.keyCode === 13) {
+      this.search();
+    }
+  },
+  
+  search: function() {
+    var query = this.$el.find('input').val();
+    this.collection.search(query);
+  },
+
   initialize: function() {
-    //this.render();
+    
   },
 
   render: function() {
