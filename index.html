@@ -31,7 +31,8 @@
 
   <script>
     backboneReady(() => {
-      new AppView();
+      new AppView({el: '#app'});//.render();
+      
     });
   </script>
 
