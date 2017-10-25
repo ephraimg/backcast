@@ -2,8 +2,12 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     this.videos = new Videos();
-    var defaultVideos = this.videos.fetch(this.videos.options);
-    defaultVideos.done(() => this.render());
+    //var defaultVideos = 
+    this.videos.fetch(this.videos.options);
+    // defaultVideos.done(() => {
+    //   this.render();
+    // });
+    this.videos.on('sync', this.render, this);
   },
 
   render: function() {

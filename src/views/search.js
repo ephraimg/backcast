@@ -14,10 +14,11 @@ var SearchView = Backbone.View.extend({
   search: function() {
     var query = this.$el.find('input').val();
     this.collection.options.data.q = query;
-    var searchResults = this.collection.fetch(this.collection.options);
-    searchResults.done(() => { 
-      this.collection.at(0).select();
-    });
+    // var searchResults = 
+    this.collection.search(query);
+    // searchResults.done(() => { 
+    //   this.collection.at(0).select();
+    // });
   },
 
   render: function() {
