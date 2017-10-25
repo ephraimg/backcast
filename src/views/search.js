@@ -13,7 +13,6 @@ var SearchView = Backbone.View.extend({
   
   search: function() {
     var query = this.$el.find('input').val();
-    this.collection.options.data.q = query;
     // var searchResults = 
     this.collection.search(query);
     // searchResults.done(() => { 

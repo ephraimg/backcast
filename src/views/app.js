@@ -2,12 +2,13 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     this.videos = new Videos();
+    this.videos.search('icicles');
+    this.videos.on('sync', this.render, this);
     //var defaultVideos = 
-    this.videos.fetch(this.videos.options);
+    // this.videos.fetch(this.videos);
     // defaultVideos.done(() => {
     //   this.render();
     // });
-    this.videos.on('sync', this.render, this);
   },
 
   render: function() {
